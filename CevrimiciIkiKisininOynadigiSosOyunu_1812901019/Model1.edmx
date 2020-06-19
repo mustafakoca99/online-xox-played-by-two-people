@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MustafaKocaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="galibiyet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="x" Type="nvarchar" MaxLength="50" />
+          <Property Name="o" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="games">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="oturum" Type="int" Nullable="false" />
+          <Property Name="hamle" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="kullaniciadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="sifretekrar" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Table1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="nvarchar" MaxLength="100" />
+          <Property Name="zaman" Type="datetime" />
+          <Property Name="durum" Type="bit" />
+          <Property Name="kapan" Type="bit" />
+          <Property Name="oyun" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tablemesaj">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gonderen" Type="char" MaxLength="10" />
+          <Property Name="alici" Type="char" MaxLength="10" />
+          <Property Name="baslik" Type="varchar" MaxLength="50" />
+          <Property Name="icerik" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="MustafaKocaModelStoreContainer">
+          <EntitySet Name="galibiyet" EntityType="Self.galibiyet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="games" EntityType="Self.games" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table1" EntityType="Self.Table1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tablemesaj" EntityType="Self.Tablemesaj" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MustafaKocaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kullaniciadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sifretekrar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="mustafakoca" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="Table1" EntityType="MustafaKocaModel.Table1" />
+          <EntitySet Name="Tablemesajs" EntityType="MustafaKocaModel.Tablemesaj" />
+          <EntitySet Name="games" EntityType="MustafaKocaModel.game" />
+          <EntitySet Name="galibiyets" EntityType="MustafaKocaModel.galibiyet" />
+        </EntityContainer>
+        <EntityType Name="Table1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="zaman" Type="DateTime" Precision="3" />
+          <Property Name="durum" Type="Boolean" />
+          <Property Name="kapan" Type="Boolean" />
+          <Property Name="oyun" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tablemesaj">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gonderen" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="alici" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="icerik" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="oturum" Type="Int32" Nullable="false" />
+          <Property Name="hamle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="galibiyet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="x" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="o" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MustafaKocaModelStoreContainer" CdmEntityContainer="mustafakoca">
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="MustafaKocaModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="sifretekrar" ColumnName="sifretekrar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Table1">
+            <EntityTypeMapping TypeName="MustafaKocaModel.Table1">
+              <MappingFragment StoreEntitySet="Table1">
+                <ScalarProperty Name="oyun" ColumnName="oyun" />
+                <ScalarProperty Name="kapan" ColumnName="kapan" />
+                <ScalarProperty Name="durum" ColumnName="durum" />
+                <ScalarProperty Name="zaman" ColumnName="zaman" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tablemesajs">
+            <EntityTypeMapping TypeName="MustafaKocaModel.Tablemesaj">
+              <MappingFragment StoreEntitySet="Tablemesaj">
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="alici" ColumnName="alici" />
+                <ScalarProperty Name="gonderen" ColumnName="gonderen" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="games">
+            <EntityTypeMapping TypeName="MustafaKocaModel.game">
+              <MappingFragment StoreEntitySet="games">
+                <ScalarProperty Name="hamle" ColumnName="hamle" />
+                <ScalarProperty Name="oturum" ColumnName="oturum" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="galibiyets">
+            <EntityTypeMapping TypeName="MustafaKocaModel.galibiyet">
+              <MappingFragment StoreEntitySet="galibiyet">
+                <ScalarProperty Name="o" ColumnName="o" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

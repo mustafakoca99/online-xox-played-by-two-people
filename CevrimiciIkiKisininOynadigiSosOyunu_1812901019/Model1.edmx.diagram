@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4fa321847aa04dd48e3111b8f21726d3" Name="Diagram1">
+        <EntityTypeShape EntityType="MustafaKocaModel.Table" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MustafaKocaModel.Table1" Width="1.5" PointX="2.375" PointY="1" />
+        <EntityTypeShape EntityType="MustafaKocaModel.Tablemesaj" Width="1.5" PointX="4.125" PointY="0.875" />
+        <EntityTypeShape EntityType="MustafaKocaModel.game" Width="1.5" PointX="5.875" PointY="1" />
+        <EntityTypeShape EntityType="MustafaKocaModel.galibiyet" Width="1.5" PointX="7.625" PointY="1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
